@@ -1,0 +1,86 @@
+p {
+    color: gray;
+}
+
+/*Comment*/
+
+h3, h4 {
+    color: orange;
+}
+
+.right_alligment {
+    text-align: right;
+}
+
+.red_text {
+    color: red;
+}
+
+.first {
+    color: crimson;
+}
+
+.second {
+    color: navy;
+}
+
+#third {
+    color: purple;
+    background-color: bisque;
+    font-style: italic;
+    border: 2px dotted;
+}
+
+/* Priority of a selector */
+li {
+    color: limegreen;
+}
+
+.thing {
+    color: blue;
+}
+
+#first_thing {
+    color: red;
+}
+
+div p {
+    color: aquamarine;
+}
+
+div>p {
+    border: 1px solid green;
+}
+
+a {
+    color: lime;
+    text-decoration: none;
+}
+
+a:link {
+    color: blue;
+}
+
+a:visited {
+    color: brown;
+}
+
+a:hover {
+    background-color: yellow;
+}
+
+/* pseduo selecetors*/
+
+p:first-child {
+    font-weight: bold;
+}
+
+li:nth-child(3) {
+    font-weight: bold;
+}
+
+h3:last-of-type {
+    text-align: center;
+    color: green;
+    font-family: 'Times New Roman', Times, serif;
+}
