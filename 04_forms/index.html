@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <fieldset>
+            <legend>Basic Info</legend>
+
+        <p>
+            <label for="">Name: </label>
+            <input type="text">
+        </p>
+
+        <p>
+            <label for=""></label>
+            <input type="text" placeholder="Surname">
+        </p>
+
+        <p>
+            <input type="text" value="Course" maxlength="10">
+        </p>
+
+        <p>
+            <label for="">Age: </label>
+            <input type="number" min="18" step="0.5">
+        </p>
+
+        <p>
+            <label for="">Password: </label>
+            <input type="password">
+        </p>
+
+        <p>
+            <label for="">Date Of Birth: </label>
+            <input type="date">
+        </p>
+
+        </fieldset>
+
+        <br>
+
+        <fieldset>
+            <legend>Additional Info</legend>
+        
+        <p>
+            <label for="">Course Selection: </label>
+            <input type="radio" name="course" value="js">JavaScript
+            <input type="radio" name="course" value="php">PHP
+            <input type="radio" name="course" value="qa">QA
+        </p>
+
+        <p>
+            <label for="">Knowledge: </label>
+            <input type="checkbox" name="knowledge" value="html">HTML
+            <input type="checkbox" name="knowledge" value="css">CSS
+            <input type="checkbox" name="knowledge" value="js">JavaScript 
+        </p>
+
+        <p>
+            <label for="file">Choose File: </label>
+            <input type="file" id="file">
+        </p>
+
+        <p>
+        <select name="" id="">
+            <optgroup label="Niš">
+                <option value="js">JavaScript</option>
+                <option value="qa-ni">QA</option>
+            </optgroup>
+
+            <optgroup label="Belgrade">
+                <option value="py">Python</option>
+                <option value="php">PHP</option>
+                <option value="qa-bg">QA</option>
+            </optgroup>
+        </select>
+        </p>
+
+        </fieldset>
+
+        <br>
+
+        <input type="button" value="Click Me">
+        <input type="submit" value="Submit Here">
+        <input type="reset" value="Reset Form">
+    </form>
+</body>
+</html>
