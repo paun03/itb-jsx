@@ -1,0 +1,76 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.topbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+.topbar ul {
+    overflow: hidden;
+    list-style: none;
+}
+
+.topbar ul li {
+    float: left;
+    width: 25%;
+    border: 1px solid red;
+    text-align: center;
+    background-color: brown;
+}
+
+.topbar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px 0;
+    display: block;
+}
+
+.topbar ul li a:hover {
+    background-color: chocolate;
+}
+
+.reminder {
+    position: relative;
+    top: 45px;
+    overflow: hidden;
+}
+
+.reminder aside {
+    float: left;
+    width: 30%;
+    
+}
+
+.reminder section {
+    float: left;
+    width: 70%;
+}
+
+.reminder aside ul {
+    list-style: none;
+}
+
+.reminder aside ul li {
+    border: 1px solid green;
+    text-align: center;
+    background-color: fuchsia;
+}
+
+.reminder aside ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px 0;
+    display: block;
+}
+
+.reminder aside ul li a:hover {
+    background-color: blueviolet;
+}

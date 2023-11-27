@@ -28,3 +28,20 @@ p {
     height: 300px;
 
 }
+
+span {
+    display: inline-block;
+    background-color: brown;
+    color: white;
+    border: 3px solid blue;
+    padding: 30px;
+    width: 50%;
+
+    
+}
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+
+}

@@ -1,0 +1,24 @@
+/* 
+parent - child structure
+children - float
+parent - overflow
+*/
+
+div {
+    background-color: brown;
+    overflow: hidden;
+
+}
+
+p {
+    background-color: aquamarine;
+    width: 250px;
+    height: 50px;
+    float: right;
+    border: 1px solid blue;
+}
+
+p:nth-child(2n) {
+    float: left;
+}
+

@@ -1,0 +1,50 @@
+header {
+    position: relative;
+    background-image: url(https://arc-anglerfish-arc2-prod-bostonglobe.s3.amazonaws.com/public/ANSADPFZAYI6PI7MVN5DCE5XF4.jpg);
+    height: 250px;
+    
+}
+
+p {
+    margin: 0;
+    color: white;
+    font-size: 24px;
+
+    /*
+    position: absolute;
+    top: 0;
+    left: 0;
+    */
+    
+    /*
+    position: absolute;
+    top: 0;
+    right: 0;
+    */
+
+    /*
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    */
+
+    /*
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    */
+
+    /*
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    */
+}
+
+
+
+
+
+
+
