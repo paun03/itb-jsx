@@ -41,6 +41,11 @@ console.log(fromMidnight);
 
 // 5
 
+let year = date.getFullYear();
+let month = date.getMonth();
+let day = date.getDate();
+
+console.log(day + "." + (month + 1) + "." + year);
 
 // 6
 
