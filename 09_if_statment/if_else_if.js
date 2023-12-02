@@ -92,7 +92,7 @@ if (num % 1 == 0) {
     console.log("Ceo");
 }
 
-else (
-    console.log("Decimalan")
-)
+else {
+    console.log("Decimalan");
+}
 
