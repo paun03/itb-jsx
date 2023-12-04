@@ -35,7 +35,7 @@ else {
     // document.write("<p style=\"color: blue;\">Negative</p>");
     let p = document.getElementById("temp");
     p.innerHTML = "Negative";
-    p.style.color   = "blue";
+    p.style.color = "blue";
 }
 
 // 3
