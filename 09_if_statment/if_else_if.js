@@ -95,4 +95,3 @@ if (num % 1 == 0) {
 else {
     console.log("Decimalan");
 }
-
