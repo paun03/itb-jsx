@@ -240,9 +240,10 @@ while (n > i) {
     amountOfDigits++;
     sumOfDigits = sumOfDigits + digit;
     n = Math.floor(n / 10);
-    arithmeticMean = sumOfDigits / amountOfDigits;
     stringNumber = stringNumber + digit;
 }
+
+arithmeticMean = sumOfDigits / amountOfDigits;
 
 console.log(sumOfDigits);
 console.log(arithmeticMean);
