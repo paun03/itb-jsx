@@ -249,4 +249,3 @@ console.log(sumOfDigits);
 console.log(arithmeticMean);
 console.log(stringNumber);
 console.log("END OF 13");
-

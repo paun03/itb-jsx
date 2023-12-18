@@ -26,17 +26,3 @@ for (i = 0; i < numbers.length; i++) {
 
 console.log(numbers);
 
-let isPalindrome = (n) => {
-    let newString = "";
-    for (let i = n.length; i >= 0; i--) {
-        newString += n[i - 1];
-    }
-
-    if (newString == n) {
-        return true;
-    } else {
-        return false;
-    }
-}
-
-console.log(isPalindrome("racecar"));
