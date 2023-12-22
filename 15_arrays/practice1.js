@@ -282,3 +282,5 @@ let changeOddWithEvenIndex = (array) => {
 console.log(changeOddWithEvenIndex(numbers));
 console.log(changeOddWithEvenIndex(numbers2));
 console.log(changeOddWithEvenIndex(numbers3));
+
+
