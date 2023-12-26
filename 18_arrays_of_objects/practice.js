@@ -24,27 +24,24 @@ let dan3 = {
 
 let dani = [dan1, dan2, dan3];
 
-console.log("START OF 1");
-
-let datumNajvišePutaIzmereneTemperature = (a) => {
-    let maksMerenja = 0;
-    let danSaNajvišeMerenja = "";
-
-    a.forEach(d => {
-        if (d.temperature.length = maksMerenja) {
-            maksMerenja = d.temperature.length;
-            danSaNajvišeMerenja = d.datum;
-        }
-    });
-
-    return danSaNajvišeMerenja;
-};
-
-console.log(datumNajvišePutaIzmereneTemperature(dani));
-
 // 2
 
+let najvišeMerenja = (arr) => {
+    let maksMerenja = 0;
+    let datumMerenja = "";
+    arr.forEach(e => {
+        if (e.temperature.length > maksMerenja) {
+            maksMerenja = e.temperature.length; 
+            datumMerenja = e.datum;
+        };
+    });
+    return datumMerenja;
+};
+
 console.log("START OF 2");
+console.log(najvišeMerenja(dani));
+
+// 3
 
 let kolikoJeBiloDana = (a) => {
     let brojKišnih = 0;
@@ -64,39 +61,36 @@ let kolikoJeBiloDana = (a) => {
     return [brojKišnih, brojOblačnih, brojSunčanih];
 }
 
+console.log("START OF 3");
 console.log(kolikoJeBiloDana(dani));
 
-// 3
+// 4
 
-let kolikoDanaSaIznadprosečnomTemperaturom = (a) => {
-    let prosek = 0;
-    let suma = 0;
-    let br = 0;
-    let br1 = 0;
-
-    a.forEach(d => {
-        d.temperature.forEach(t => {
-            suma += t;
-            br++;
+let daniSaNatprosečnomTemperaturom = (arr) => {
+    let sumaGlobal = 0;
+    let brGlobal = 0;
+    let prosekGlobal = 0;
+    arr.forEach(e => {
+        e.temperature.forEach(t =>{
+            sumaGlobal += t;
+            brGlobal++;
         });
     });
-
-    prosek = suma / br;
-
-    a.forEach(d => {
-        let sumaDana = 0;
-
-        d.temperature.forEach(t => {
-            sumaDana += t;
+    prosekGlobal = sumaGlobal / brGlobal;
+    let brDana = 0;
+    arr.forEach(e => {
+        let sumaInd = 0;
+        let prosekInd = 0;
+        e.temperature.forEach(t => {
+            sumaInd += t;
         });
-        let prosekDana = sumaDana / d.temperature.length;
-        
-        if (prosekDana > prosek) {
-            br1++;
-        }
-    });
+        prosekInd = sumaInd / e.temperature.length;
 
-    return br1;
+        if (prosekInd > prosekGlobal) {
+            brDana++;
+        };
+    });
+    return brDana;
 };
 
-console.log(kolikoDanaSaIznadprosečnomTemperaturom(dani));
+console.log(daniSaNatprosečnomTemperaturom(dani));

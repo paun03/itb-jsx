@@ -151,6 +151,7 @@ users.forEach(u => {
         sumOfLikes += b.likes;
         sumOfDislikes += b.dislikes;
         counter++;
+        console.log(sumOfLikes);
     });
 
     averageLikes = sumOfLikes / counter;
