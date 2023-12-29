@@ -44,34 +44,37 @@
     <button id="btnForm">INPUT GENDER!</button>
 
     <p id="genderPar"></p>
-
+    <table>
         <form>
-            <label>
-                Square: <input type="text" id="squareValue">
-                <button id="btnSquare" type="button">CALCULATE</button>
-            </label>
-
-            <br>
-            <br>
-
-            <label>
-                Divided By 2: <input type="number" id="dividedValue">
-                <button id="btnDividedBy2" type="button">CALCULATE</button>
-            </label>
-
-            <br>
-            <br>
-            
-            <label>
-                Surface Of A Square: <input type="number" id="surfaceValue">
-                <button id="btnSurface" type="button">CALCULATE</button>
-            </label>
+            <tr>
+                <td>
+                    <label for="">Kvadriraj Ovaj Broj: </label>
+                    <input type="text" id="inputRačun">
+                    <button id="btnRačun" type="button">Izračunaj</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="">Prepolovi Ovaj Broj: </label>
+                    <input type="text" id="inputPola">
+                    <button id="btnPola" type="button">Izračunaj</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="">Izračunati Površinu Kruga Za Zadati Poluprečnik: </label>
+                    <input type="text" id="inputPovršina">
+                    <button id="btnPovršina" type="button">Izračunaj</button>
+                </td>
+            </tr>
         </form>
-        
+    </table>
 
-    <p id="square"></p>
-    <p id="dividedBy2"></p>
-    <p id="surface"></p>
+    <p id="pRačun"></p>
+    <p id="pPola"></p>
+    <p id="pPovršina"></p>
+
+    
 
     <script src="script.js"></script>
 

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+<body>
+    <form>
+        <table>
+            <tr>
+                <td>
+                    <label for="">1:</label>
+                    <input type="text" id="num1">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="">2:</label>
+                    <input type="text" id="num2">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    +<input type="radio" name="operation" value="plus" checked>
+                    -<input type="radio" name="operation" value="minus"> 
+                    *<input type="radio" name="operation" value="multiply"> 
+                    /<input type="radio" name="operation" value="divide"> 
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="submit" value="calculate" id="submit"> 
+                    <input type="reset" value="reset" id="reset"> 
+                </td>
+            </tr>
+        </table>
+    </form>
+    <p id="pResult"></p>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -66,24 +66,40 @@ btnForm.addEventListener("click", () => {
         genderPar.innerHTML = selectedGender.value;
     };
 
+let genderRadios = document.getElementsByName("gender");
+genderRadios.forEach(radioButton => {
+    if (radioButton.checked) {
+        console.log(`${radioButton.value}`);
+    }
+});
+
 });
 
 // 7
 
-let btnSquare = document.querySelector("#btnSquare");
-let btnDividedBy2 = document.querySelector("#btnDividedBy2");
-let btnSurface = document.querySelector("#btnSurface");
+let btnRačun = document.querySelector("#btnRačun");
+let btnPola = document.querySelector("#btnPola");
+let btnPovršina = document.querySelector("#btnPovršina");
 
-let pSquare = document.querySelector("#square");
-let pDividedBy2 = document.querySelector("#dividedBy2");
-let pSurface = document.querySelector("#surface");
+let inputRačun = document.querySelector("#inputRačun");
+let inputPola = document.querySelector("#inputPola");
+let inputPovršina = document.querySelector("#inputPovršina");
 
-let squareValue = document.querySelector("#squareValue");
-let dividedValue = document.querySelector("#dividedValue")
-let surfaceValue = document.querySelector("#surfaceValue")
+let pRačun = document.querySelector("#pRačun");
+let pPola = document.querySelector("#pPola");
+let pPovršina = document.querySelector("#pPovršina");
 
-btnSquare.addEventListener("click", () => {
-    let getNum = squareValue.value;
-    pSquare.textContent = `${getNum * getNum}`;
+btnRačun.addEventListener("click", () => {
+    pRačun.innerHTML = `${inputRačun.value ** 2}`;
 });
+
+btnPola.addEventListener("click", () => {
+    pPola.innerHTML = `${inputPola.value / 2}`;
+});
+
+btnPovršina.addEventListener("click", () => {
+    pPovršina.innerHTML = `${(inputPovršina.value ** 2) * Math.PI}`;
+});
+
+// 8
 
