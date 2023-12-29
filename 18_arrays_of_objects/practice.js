@@ -67,30 +67,30 @@ console.log(kolikoJeBiloDana(dani));
 // 4
 
 let daniSaNatprosečnomTemperaturom = (arr) => {
-    let sumaGlobal = 0;
-    let brGlobal = 0;
-    let prosekGlobal = 0;
+    let globalProsek = 0;
+    let globalBr = 0;
+    let globalSum = 0;
     arr.forEach(e => {
-        e.temperature.forEach(t =>{
-            sumaGlobal += t;
-            brGlobal++;
+        e.temperature.forEach(t => {
+            globalSum += t;
+            globalBr++;
         });
     });
-    prosekGlobal = sumaGlobal / brGlobal;
+    globalProsek = globalSum / globalBr;
     let brDana = 0;
     arr.forEach(e => {
-        let sumaInd = 0;
-        let prosekInd = 0;
+        let indProsek = 0;
+        let indSum = 0;
         e.temperature.forEach(t => {
-            sumaInd += t;
+            indSum += t;
         });
-        prosekInd = sumaInd / e.temperature.length;
-
-        if (prosekInd > prosekGlobal) {
+        indProsek = indSum / e.temperature.length;
+        if (indProsek > globalProsek) {
             brDana++;
         };
     });
     return brDana;
 };
 
+console.log("START OF 4");
 console.log(daniSaNatprosečnomTemperaturom(dani));
