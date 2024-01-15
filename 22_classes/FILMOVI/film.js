@@ -1,9 +1,12 @@
 class Film {
-    constructor(naslov, režiser, godinaIzdanja) {
+    constructor(naslov, režiser, godinaIzdanja, ocene) {
         this.naslov = naslov;
         this.režiser = režiser;
         this.godinaIzdanja = godinaIzdanja;
-    }
+        this.ocene = ocene;
+    }   
+
+    // SET
 
     set naslov(naslov) {
         this._naslov = naslov;
@@ -21,6 +24,17 @@ class Film {
         }
     }
 
+    set ocene(ocene) {
+        for (let i = 0; i < ocene.length; i++) {
+            if (ocene[i] > 10 || ocene[i] < 5 || ocene[i] !== Math.ceil(ocene[i])) {
+                ocene[i] = 5;
+            }
+        }
+        this._ocene = ocene;
+    }
+
+    // GET
+
     get naslov() {
         return this._naslov;
     }
@@ -33,18 +47,21 @@ class Film {
         return this._godinaIzdanja;
     }
 
+    get ocene() {
+        return this._ocene;
+    }
+
     štampaj() {
         console.log(this.naslov);
+    }
+
+    prosek() {
+        let suma = 0;
+        for (let i = 0; i < this.ocene.length; i++) {
+            suma += this.ocene[i];
+        }
+        return suma / this.ocene.length;
     }
 };
 
 export default Film;
-
-// let film1 = new Film("Openhaimer", "Christopher Nolan", 2023);
-// film1.godinaIzdanja = 1799;
-// console.log(film1);
-// film1.štampaj();
-
-// let film2 = new Film("Čuvari Formule", "Dragan Bjelogrlić", 2023);
-// console.log(film2);
-// console.log(`Film: ${film2.naslov}, Godina Izdanja: ${film2.godinaIzdanja}`);
