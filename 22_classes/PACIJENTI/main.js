@@ -14,14 +14,14 @@ let pacijenti = [pacijent1, pacijent2, pacijent3];
 
 let najmanjaTezina = (arr) => {
     let minTezina = Infinity;
-    let pacijentSaNajmanjomTezion = "";
+    let pacijentSaNajmanjomTezinom = "";
     arr.forEach(e => {
         if (minTezina > e.tezina) {
             minTezina = e.tezina;
-            pacijentSaNajmanjomTezion = `${e.ime}, ${e.visina}, ${e.tezina}`;
+            pacijentSaNajmanjomTezinom = `${e.ime}, ${e.visina}, ${e.tezina}`;
         }
     });
-    return pacijentSaNajmanjomTezion;
+    return pacijentSaNajmanjomTezinom;
 };
 
 console.log("1");
