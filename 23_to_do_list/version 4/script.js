@@ -9,6 +9,19 @@ let ulZadaci = document.querySelector("ul");
 let btnDodaj = document.querySelector("#submit");
 let inputZadatka = document.querySelector("#task");
 
+let nizZadataka = [];
+
+if (localStorage.getItem("zadaci") == null) {
+    localStorage.setItem("zadaci", JSON.stringify(nizZadataka))
+} else {
+    nizZadataka = JSON.parse(localStorage.getItem("zadaci"));
+    for (let i = 0; i < nizZadataka.length; i++) {
+        let li = document.createElement("li");
+        li.textContent = nizZadataka[i];
+        ulZadaci.appendChild(li);
+    } 
+}
+
 // 3
 
 // VERSION 2
@@ -26,6 +39,11 @@ ulZadaci.addEventListener("click", (e) => {
 ulZadaci.addEventListener("dblclick", (e) => {
     if(e.target.tagName == "LI") {
         ulZadaci.removeChild(e.target);
+        console.log(e.target.textContent);
+        let indeksElementa = nizZadataka.indexOf(e.target.textContent);
+        console.log(indeksElementa);
+        nizZadataka.splice(indeksElementa, 1);
+        localStorage.setItem("zadaci", JSON.stringify(nizZadataka));
     };
 });
 
@@ -43,14 +61,17 @@ inputZadatka.addEventListener("keypress", (e) => {
             let li = document.createElement("li");
             li.innerText = `${tekstZadatka}`;
             ulZadaci.appendChild(li);
+            nizZadataka.push(tekstZadatka);
             inputZadatka.value = "";
             } else {
                 let li = document.createElement("li");
                 li.innerText = `${tekstZadatka}`;
                 ulZadaci.insertBefore(li, ulZadaci.firstChild);
+                nizZadataka.unshift(tekstZadatka);
                 inputZadatka.value = "";
             }
         }  
     };
+    localStorage.setItem("zadaci", JSON.stringify(nizZadataka));
 });
 
