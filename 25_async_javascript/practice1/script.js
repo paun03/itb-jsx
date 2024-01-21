@@ -77,3 +77,40 @@ requestFour.addEventListener("readystatechange", () => {
 
 requestFour.open("GET", "https://jsonplaceholder.typicode.com/users");
 requestFour.send();
+
+// 5
+
+const requestFive = fetch("https://jsonplaceholder.typicode.com/users");
+
+requestFive.then((response) => {
+    return response.json();
+}).then((data) => {
+    let cityArr = [];
+    for (let i = 0; i < data.length; i++) {
+        if (cityArr.includes(data[i].address.city) === false)
+        cityArr.push(data[i].address.city);
+    };
+    console.log("REQUEST 5");
+    console.log(cityArr);
+}).catch((error) => {
+    console.log(error);
+});
+
+// 6
+
+const requestSix = fetch("https://jsonplaceholder.typicode.com/users");
+
+requestSix.then((response) => {
+    return response.json();
+}).then ((data) => {
+    let counter = 0;
+    data.forEach(element => {
+        if (element.address.geo.lat < 0 && element.address.geo.lng < 0) {
+            counter++;
+        }
+    });
+    console.log("REQUEST 6");
+    console.log(counter);
+}).catch((error) => {
+    console.log(error);
+});
