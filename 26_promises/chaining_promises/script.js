@@ -34,11 +34,14 @@ getJSON("../JSON/prvi.json")
 .then(data => {
     console.log(data);
     return getJSON("../JSON/drugi.json");
-}).then(data => {
+})
+.then(data => {
     console.log(data);
     return getJSON("../JSON/treci.json");
-}).then(data => {
+})
+.then(data => {
     console.log(data);
-}).catch(error => {
+})
+.catch(error => {
     console.error(error);
 });
