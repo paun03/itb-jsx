@@ -72,4 +72,44 @@ let submitFormTwo = (event) => {
     });
 };
 
-form.addEventListener("submit", submitFormTwo);
+async function clickGetItems() {
+    let arrOfItems = [];
+    let dataOne = await getItemsReturnPromise("JSON/stock.json");
+    dataOne.forEach(item => {
+    if (item.stock === 0) {
+    arrOfItems.push(item.id);
+    }
+    });
+    let dataTwo = await getItemsReturnPromise("JSON/weights.json");
+    let totalWeight = 0;
+    dataTwo.forEach(item => {
+        if (arrOfItems.includes(item.id)) {
+            totalWeight += item.weight;}
+            
+    });
+    if (totalWeight <= Number(capacity.value)) {
+        let dataThree = await getItemsReturnPromise("JSON/prices.json");
+        let totalPrice = 0;
+        dataThree.forEach((item) => {
+            if (arrOfItems.includes(item.id)) {
+                totalPrice += item.price;
+            }
+        });
+        return totalPrice;
+    } else {
+        return "Not Enough Capacity!"
+    }
+}
+
+let submitFormThree = async (event) => {
+    event.preventDefault();
+    clickGetItems()
+    .then(data => {
+        div.innerHTML = data;
+    })
+    .catch(err => {
+        div.innerHTML = `${err}`;
+    });
+};
+
+form.addEventListener("submit", submitFormThree);
