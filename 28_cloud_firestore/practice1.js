@@ -91,6 +91,8 @@ db.collection("movies")
 .then(snapshot => {
     snapshot.forEach(doc => {
         let data = doc.data();
-        console.log(doc.id);
-    });
+        console.log(doc.id, data);
+    }).catch(e => {
+        console.log(e);
+    })
 })
