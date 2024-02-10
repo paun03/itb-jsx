@@ -5,6 +5,7 @@
 }
 
 body {
+    position: relative;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -60,7 +61,7 @@ h3 {
     background-color: violet;
     width: 400px;
     margin-bottom: 12px;
-    border-radius: 20px 0px 0px 0px;
+    border-radius: 20px 0px 20px 0px;
 }
 
 #sectionInputFields {
@@ -102,6 +103,19 @@ h3 {
 
 .btnBackgroundColor {
     background-color: indigo !important;
+}
+
+#sectionUsernameChange {
+    position: absolute;
+    display: none;
+    z-index: 100;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    width: 240px;
+    height: 120px;
 }
 
 @media screen and (max-width: 1200px) {

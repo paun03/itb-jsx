@@ -4,6 +4,7 @@ import ChatUi from "./ui.js";
 // SELECTORS
 
 let sectionSelectARoom = document.querySelector("#sectionSelectARoom");
+let sectionUsernameChange = document.querySelector("#sectionUsernameChange");
 
 let ulMessage = document.querySelector("#ulMessage");
 
@@ -15,7 +16,11 @@ let inputSend = document.querySelector("#inputSend");
 let inputUpdate = document.querySelector("#inputUpdate");
 let inputColor = document.querySelector("#inputColor");
 
+let h1WelcomeMessage = document.querySelector("#h1WelcomeMessage");
+let spanCounter = document.querySelector("#spanCounter");
+
 let newRoom = "#general";
+let spanCounterVar = 3;
 
 // OBJ
 
@@ -52,9 +57,22 @@ let selectedRoom = (e) => {
 
 btnUpdate.addEventListener("click", (event) => {
     event.preventDefault();
-    location.reload();
     localStorage.setItem("username", inputUpdate.value);
     chatroom.username = localStorage.getItem("username");
+    h1WelcomeMessage.innerHTML = `Welcome, ${localStorage.getItem("username")}`;
+    sectionUsernameChange.style.display = "block";
+    setTimeout(() => {
+        sectionUsernameChange.style.display = "none";
+        location.reload();
+    }, 3000);
+
+    setInterval(() => {
+        spanCounterVar--;
+        spanCounter.innerHTML = spanCounterVar;
+        if (spanCounterVar === 0) {
+            spanCounterVar = 3;
+        }
+    }, 1000);  
 });
 
 chatroom.username = localStorage.getItem("username");

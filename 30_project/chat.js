@@ -3,6 +3,7 @@ class Chatroom {
         this.room = room;
         this.username = username;
         this.chats = db.collection("chats");
+        this.unsub = false;
     }
     
     // SET
@@ -45,17 +46,21 @@ class Chatroom {
     }
 
     getChats(callback) {
-        this.chats
+        if (this.unsub) {
+            this.unsub();
+        }
+        this.unsub = this.chats
         .where('room', '==', this.room)
         .orderBy('created_at')
         .onSnapshot(snapshot => {
             snapshot.docChanges().forEach(change => {
-                if(change.type == 'added') {
+                if (change.type === 'added') {
                     callback(change.doc.data());
                 }
             });
         });
     }
+
 
     updateRoom(room) {
         this.room = room;
