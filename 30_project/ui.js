@@ -1,4 +1,5 @@
 class ChatUi {
+    
     constructor(list) {
         this.list = list;
     }

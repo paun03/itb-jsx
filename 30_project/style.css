@@ -90,9 +90,18 @@ h3 {
     height: 30px;
 }
 
+#formColor, #formUpdate {
+    display: flex;
+    gap: 6px;
+}
+
 #formSend {
     display: flex;
-    gap: 18px;
+    gap: 20px;
+}
+
+.btnBackgroundColor {
+    background-color: indigo !important;
 }
 
 @media screen and (max-width: 1200px) {
