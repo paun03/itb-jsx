@@ -33,6 +33,17 @@ class ChatUi {
         li.innerHTML = `${data.username}: ${data.message}<br>${this.formatTime(data.created_at.seconds)}`;
         return li;
     };
+
+    delete() {
+        this.list.innerHTML = "";
+    }
+
+    clear() {
+        while (this.list.firstChild) {
+            this.list.removeChild(this.list.firstChild);
+        }
+    }
+
 };
 
 export default ChatUi; 

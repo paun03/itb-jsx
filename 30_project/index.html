@@ -12,22 +12,22 @@
         <h3>Choose A Chatroom</h3>
     </header>
     <section id="sectionSelectARoom">
-        <button>#general</button>
-        <button>#js</button>
-        <button>#homeworks</button>
-        <button>#tests</button>
+        <button id="btnGeneral">#general</button>
+        <button id="btnJs">#js</button>
+        <button id="btnHomeworks">#homeworks</button>
+        <button id="btnTests">#tests</button>
     </section>
     <section id="sectionMessageDisplay">
         <ul id="ulMessage"></ul>
     </section>
     <section id="sectionInputFields">
         <form id="formSend">
-            <input type="text" placeholder="Send A Message">
-            <button>Send</button>
+            <textarea id="inputSend" name="message" rows="2" cols="50" placeholder="Write Something..."></textarea>
+            <button id="btnSend">Send</button>
         </form>
         <form id="formUpdate">
-            <input type="text" placeholder="Update Username">
-            <button>Update</button>
+            <input id="inputUpdate" type="text" placeholder="Update Username">
+            <button id="btnUpdate">Update</button>
         </form>
     </section>
     <!-- The core Firebase JS SDK is always required and must be listed first -->

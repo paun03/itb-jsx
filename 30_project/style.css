@@ -6,6 +6,9 @@
 
 body {
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 h1 {
@@ -41,12 +44,23 @@ h3 {
 
 #sectionMessageDisplay {
     margin-top: 16px;
+    width: 800px;
     min-height: 800px;
+    display: flex;
+    justify-content: start;
+}
+
+#sectionMessageDisplay ul {
+    list-style-type: none;
 }
 
 #sectionMessageDisplay ul li {
-    font-size: 24px;
+    font-size: 18px;
     color: purple;
+    background-color: violet;
+    width: 400px;
+    margin-bottom: 12px;
+    border-radius: 20px 0px 0px 0px;
 }
 
 #sectionInputFields {
@@ -74,6 +88,11 @@ h3 {
 #sectionInputFields input {
     width: 400px;
     height: 30px;
+}
+
+#formSend {
+    display: flex;
+    gap: 18px;
 }
 
 @media screen and (max-width: 1200px) {

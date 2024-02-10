@@ -51,11 +51,14 @@ class Chatroom {
         .onSnapshot(snapshot => {
             snapshot.docChanges().forEach(change => {
                 if(change.type == 'added') {
-                    // console.log(change.doc.data());
                     callback(change.doc.data());
                 }
             });
         });
+    }
+
+    updateRoom(room) {
+        this.room = room;
     }
 };
 
