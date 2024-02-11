@@ -25,8 +25,14 @@ class ChatUi {
         let day = date.getDate();
         let hours = date.getHours();
         let minutes = date.getMinutes();
-    
-        return `${String(day).padStart(2, '0')}.${String(month).padStart(2, '0')}.${year} - ${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}`; 
+        
+        if (day === currentDate.getDate()) {
+            return `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}`;
+        } else {
+            return `${String(day).padStart(2, '0')}.${String(month).padStart(2, '0')}.${year} - ${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}`; 
+        }
+
+        
     };
     
     templateLi = (data) => {
@@ -46,5 +52,7 @@ class ChatUi {
     }
 
 };
+
+let currentDate = new Date();
 
 export default ChatUi; 
