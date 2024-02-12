@@ -64,6 +64,13 @@ h3 {
     border-radius: 20px 0px 20px 0px;
 }
 
+#sectionMessageDisplay ul li img {
+    position: relative;
+    top: -5px;
+    right: -20%;
+    cursor: pointer;
+}
+
 #sectionInputFields {
     display: flex;
     flex-direction: column;
@@ -86,7 +93,7 @@ h3 {
     background-color: indigo;
 }
 
-#sectionInputFields input {
+#sectionInputFields input, textarea {
     width: 400px;
     height: 30px;
 }
@@ -98,7 +105,7 @@ h3 {
 
 #formSend {
     display: flex;
-    gap: 20px;
+    gap: 6px;
 }
 
 .btnBackgroundColor {
@@ -119,6 +126,19 @@ h3 {
 }
 
 @media screen and (max-width: 1200px) {
+
+    #sectionSelectARoom button {
+        width: 100px;
+    }
+
+    #sectionMessageDisplay {
+        justify-content: center;
+    }
+
+    #sectionMessageDisplay ul li {
+        margin-left: 0 !important;
+    }
+
     #sectionSelectARoom {
         margin: 0 12px;
     }
@@ -127,7 +147,7 @@ h3 {
         width: 140px;
     }
 
-    #sectionInputFields input {
+    #sectionInputFields input, textarea {
         width: 180px;
     }
 }
