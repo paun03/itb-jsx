@@ -112,6 +112,17 @@ sectionSelectARoom.addEventListener('click', e => {
     }
 });
 
+sectionMessageDisplay.addEventListener("click", e => {
+    e.preventDefault();
+    if (e.target.id === "imgDelete") {
+        if (e.target.closest('li').style.backgroundColor !== "beige") {
+            e.target.closest('li').remove();
+        } else {
+            
+        }
+    }
+});
+
 window.onload = () => {
     btnGeneral.classList.add("btnBackgroundColor");
     chatroom.updateRoom(newRoom);

@@ -33,7 +33,7 @@ class Chatroom {
 
     async addChat(message) {
         try {
-            return await db.collection("chats").add({
+            await db.collection("chats").add({
                 message: message,
                 username: this.username,
                 room: this.room,
@@ -41,7 +41,27 @@ class Chatroom {
             })
         } 
         catch(e) {
-            console.log(e);
+            console.error(e);
+        }
+    }
+
+    async removeChat(message, username, room, createdAt) {
+        try {
+            let querySnapshot = await db.collection("chats")
+                .where("message", "==", message)
+                .where("username", "==", username)
+                .where("room", "==", room)
+                .where("created_at", "==", createdAt)
+                .get();
+
+            querySnapshot.forEach(async (doc) => {
+                await db.collection("chats").doc(doc.id).delete();
+                console.log("Document successfully deleted:", doc.id);
+            });
+
+            console.log("All matching documents deleted successfully");
+        } catch (error) {
+            console.error("Error removing documents:", error);
         }
     }
 
