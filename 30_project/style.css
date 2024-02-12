@@ -56,6 +56,7 @@ h3 {
 }
 
 #sectionMessageDisplay ul li {
+    position: relative;
     font-size: 18px;
     color: purple;
     background-color: violet;
@@ -65,9 +66,9 @@ h3 {
 }
 
 #sectionMessageDisplay ul li img {
-    position: relative;
-    top: -5px;
-    right: -20%;
+    position: absolute;
+    bottom: 5px;
+    right: 15px;
     cursor: pointer;
 }
 
@@ -126,6 +127,11 @@ h3 {
 }
 
 @media screen and (max-width: 1200px) {
+
+    body {
+        width: 100%;
+        overflow-x: hidden;
+    }
 
     #sectionSelectARoom button {
         width: 100px;

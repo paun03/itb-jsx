@@ -125,6 +125,7 @@ sectionMessageDisplay.addEventListener("click", async (e) => {
         }
     }
 });
+
 window.onload = () => {
     btnGeneral.classList.add("btnBackgroundColor");
     chatroom.updateRoom(newRoom);
