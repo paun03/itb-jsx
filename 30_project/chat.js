@@ -65,8 +65,8 @@ class Chatroom {
             .onSnapshot(snapshot => {
                 snapshot.docChanges().forEach(change => {
                     if (change.type === 'added') {
-                        const documentData = change.doc.data();
-                        const documentId = change.doc.id; 
+                        let documentData = change.doc.data();
+                        let documentId = change.doc.id; 
                         documentData.id = documentId;
                         callback(documentData);
                     }   

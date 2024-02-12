@@ -119,7 +119,6 @@ sectionMessageDisplay.addEventListener("click", async (e) => {
             e.target.closest('li').remove();
         } else {
             let dataId = e.target.closest('li').getAttribute('dataId');
-            console.log(dataId);
             e.target.closest('li').remove();
             await chatroom.removeChat(dataId); 
         }

@@ -70,6 +70,11 @@ h3 {
     bottom: 5px;
     right: 15px;
     cursor: pointer;
+    transition: all 0.3s;
+}
+
+#sectionMessageDisplay ul li img:hover {
+    scale: 1.1;
 }
 
 #sectionInputFields {
