@@ -4,6 +4,7 @@ import ChatUi from "./ui.js";
 // SELECTORS
 
 let sectionSelectARoom = document.querySelector("#sectionSelectARoom");
+let sectionMessageDisplay = document.querySelector("#sectionMessageDisplay");
 let sectionUsernameChange = document.querySelector("#sectionUsernameChange");
 
 let ulMessage = document.querySelector("#ulMessage");
@@ -80,8 +81,8 @@ chatroom.username = localStorage.getItem("username");
 btnSend.addEventListener("click", (event) => {
     event.preventDefault();
     if (inputSend.value.trim() !== "") {
-    chatroom.addChat(inputSend.value);
-    inputSend.value = "";
+        chatroom.addChat(inputSend.value);
+        inputSend.value = "";
     }
 });
 
@@ -89,6 +90,7 @@ btnColor.addEventListener("click", (e) => {
     e.preventDefault();
     localStorage.setItem("color", inputColor.value);
     document.body.style.backgroundColor = localStorage.getItem("color");
+    document.sectionMessageDisplay.style.overflowX = "color:" + localStorage.getItem("color"); 
 });
 
 document.body.style.backgroundColor = localStorage.getItem("color");

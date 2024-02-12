@@ -60,19 +60,19 @@ class Chatroom {
             this.unsub();
         }
         this.unsub = this.chats
-            .where('room', '==', this.room)
-            .orderBy('created_at')
-            .onSnapshot(snapshot => {
-                snapshot.docChanges().forEach(change => {
-                    if (change.type === 'added') {
-                        let documentData = change.doc.data();
-                        let documentId = change.doc.id; 
-                        documentData.id = documentId;
-                        callback(documentData);
-                    }   
-                });
+        .where('room', '==', this.room)
+        .orderBy('created_at')
+        .onSnapshot(snapshot => {
+            snapshot.docChanges().forEach(change => {
+                if (change.type === 'added') {
+                    let documentData = change.doc.data();
+                    let documentId = change.doc.id; 
+                    documentData.id = documentId;
+                    callback(documentData);
+                }   
             });
-    }
+        });
+    };
 
 
     updateRoom(room) {
