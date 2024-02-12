@@ -50,7 +50,7 @@ class Chatroom {
             const docRef = db.collection("chats").doc(documentId);
             await docRef.delete();
         } catch (error) {
-            console.error("Error removing chat:", error);
+            console.error(error);
         }
     }
     
