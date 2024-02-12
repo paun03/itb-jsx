@@ -69,7 +69,7 @@ class Chatroom {
                         const documentId = change.doc.id; 
                         documentData.id = documentId;
                         callback(documentData);
-                    }
+                    }   
                 });
             });
     }
