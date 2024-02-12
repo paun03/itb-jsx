@@ -112,17 +112,19 @@ sectionSelectARoom.addEventListener('click', e => {
     }
 });
 
-sectionMessageDisplay.addEventListener("click", e => {
+sectionMessageDisplay.addEventListener("click", async (e) => {
     e.preventDefault();
     if (e.target.id === "imgDelete") {
         if (e.target.closest('li').style.backgroundColor !== "beige") {
-            e.target.closest('li').remove();
+            closestLi.remove();
         } else {
-            
+            let dataId = e.target.closest('li').getAttribute('dataId');
+            console.log(dataId);
+            e.target.closest('li').remove();
+            await chatroom.removeChat(dataId); 
         }
     }
 });
-
 window.onload = () => {
     btnGeneral.classList.add("btnBackgroundColor");
     chatroom.updateRoom(newRoom);
@@ -138,3 +140,17 @@ window.onload = () => {
         }
     })
 };
+
+// db.collection("chats").get().then((querySnapshot) => {
+//     querySnapshot.forEach((doc) => {
+//         // Access the ID property of each document
+//         const documentId = doc.id;
+//         console.log('Document ID:', documentId);
+
+//         // You can also access other fields of the document using doc.data()
+//         const documentData = doc.data();
+//         console.log('Document Data:', documentData);
+//     });
+// }).catch((error) => {
+//     console.log('Error getting documents:', error);
+// });

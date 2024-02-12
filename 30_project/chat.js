@@ -33,7 +33,7 @@ class Chatroom {
 
     async addChat(message) {
         try {
-            await db.collection("chats").add({
+            return await db.collection("chats").add({
                 message: message,
                 username: this.username,
                 room: this.room,
@@ -41,44 +41,37 @@ class Chatroom {
             })
         } 
         catch(e) {
-            console.error(e);
+            console.log(e);
         }
     }
 
-    async removeChat(message, username, room, createdAt) {
+    async removeChat(documentId) {
         try {
-            let querySnapshot = await db.collection("chats")
-                .where("message", "==", message)
-                .where("username", "==", username)
-                .where("room", "==", room)
-                .where("created_at", "==", createdAt)
-                .get();
-
-            querySnapshot.forEach(async (doc) => {
-                await db.collection("chats").doc(doc.id).delete();
-                console.log("Document successfully deleted:", doc.id);
-            });
-
-            console.log("All matching documents deleted successfully");
+            const docRef = db.collection("chats").doc(documentId);
+            await docRef.delete();
         } catch (error) {
-            console.error("Error removing documents:", error);
+            console.error("Error removing chat:", error);
         }
     }
+    
 
     getChats(callback) {
         if (this.unsub) {
             this.unsub();
         }
         this.unsub = this.chats
-        .where('room', '==', this.room)
-        .orderBy('created_at')
-        .onSnapshot(snapshot => {
-            snapshot.docChanges().forEach(change => {
-                if (change.type === 'added') {
-                    callback(change.doc.data());
-                }
+            .where('room', '==', this.room)
+            .orderBy('created_at')
+            .onSnapshot(snapshot => {
+                snapshot.docChanges().forEach(change => {
+                    if (change.type === 'added') {
+                        const documentData = change.doc.data();
+                        const documentId = change.doc.id; 
+                        documentData.id = documentId;
+                        callback(documentData);
+                    }
+                });
             });
-        });
     }
 
 

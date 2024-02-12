@@ -41,6 +41,7 @@ class ChatUi {
         img.src = "https://i.pinimg.com/originals/d7/b0/dd/d7b0dd6870a75da24ccb115a8b791922.png";
         img.width = 20;
         img.setAttribute("id", "imgDelete");
+        li.setAttribute("dataId", data.id); 
         li.innerHTML = `${data.username}: ${data.message}<br>${this.formatTime(data.created_at.seconds)}`;
         li.append(img);
         return li;
