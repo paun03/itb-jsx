@@ -116,7 +116,7 @@ sectionMessageDisplay.addEventListener("click", async (e) => {
     e.preventDefault();
     if (e.target.id === "imgDelete") {
         if (e.target.closest('li').style.backgroundColor !== "beige") {
-            closestLi.remove();
+            e.target.closest('li').remove();
         } else {
             let dataId = e.target.closest('li').getAttribute('dataId');
             console.log(dataId);
