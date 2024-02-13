@@ -85,7 +85,7 @@ btnSend.addEventListener("click", (event) => {
         inputSend.value = "";
         setTimeout(() => {
             document.querySelector('#ulMessage > :last-child').scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }, 1000);
+        }, 100);
     }
 });
 
@@ -109,6 +109,7 @@ sectionSelectARoom.addEventListener('click', e => {
                 const listItem = chatUiOne.templateLi(data);
                 if (data.username === chatroom.username) {
                     listItem.style.backgroundColor = "beige";
+                    listItem.style.borderRadius = "20px 0 20px 20px";
                     listItem.style.marginLeft = "100%";
                 }
                 chatUiOne.list.appendChild(listItem);
@@ -140,6 +141,7 @@ window.onload = () => {
             if (data.username === chatroom.username) {
                 listItem.style.backgroundColor = "beige";
                 listItem.style.marginLeft = "100%";
+                listItem.style.borderRadius = "20px 0 20px 20px";
             }
             chatUiOne.list.appendChild(listItem);
         }
