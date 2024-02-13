@@ -45,6 +45,7 @@ h3 {
 
 #sectionMessageDisplay {
     margin-top: 16px;
+    margin-bottom: 16px;
     width: 800px;
     height: 800px;
     overflow-y: scroll;

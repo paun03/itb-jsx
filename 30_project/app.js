@@ -83,6 +83,9 @@ btnSend.addEventListener("click", (event) => {
     if (inputSend.value.trim() !== "") {
         chatroom.addChat(inputSend.value);
         inputSend.value = "";
+        setTimeout(() => {
+            document.querySelector('#ulMessage > :last-child').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 1000);
     }
 });
 
